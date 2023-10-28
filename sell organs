@@ -2,6 +2,7 @@ import time
 
 class organs():
     
+    
     def __init__(self, name, amount, condition, cost, gender):
         self.name = name
         self.amount = amount
@@ -12,7 +13,9 @@ class organs():
     def op(self):
         print('\nYOUR ORDER : ',self.name, ' Amount : ',self.amount, 'Condition : ', self.condition)     
         print('\nCOST : $',self.amount * self.cost)
-           
+        m = int(self.amount * self.cost)
+
+       
 class body():
     def __init__(self, gender):
                           self.gender= gender
@@ -30,6 +33,7 @@ def welcome():
     print('3) sell your lungs')
     print('4) sell your kidneys')
     print('5) sell whole body')
+    print('6) view total money')
     print('----------------------------------')
     
     option = input('\nEnter here : ')
@@ -77,7 +81,7 @@ def welcome():
         ck = input('Enter condition here : ')
         
         kidney = organs('Kidneys', ak, ck, 10000000, '')
-        if ak != 2:
+        if ak >= 3:
             print('\n!!You have more than 2 kidneys!!\n##CALLING 911##')
             time.sleep(2)
             welcome()
@@ -119,6 +123,11 @@ def welcome():
             print('\nHEHE! No demand for your body!!')
             time.sleep(2)
             welcome()             
+    elif option == '6':
+                    print('\nTOTAL MONEY : ', tm)
+                    time.sleep(2)
+                    welcome()
+                    
     else:
         print('INVALID INPUT!')            
         time.sleep(2)
