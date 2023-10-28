@@ -1,0 +1,130 @@
+import time
+
+class organs():
+    
+    def __init__(self, name, amount, condition, cost, gender):
+        self.name = name
+        self.amount = amount
+        self.condition = condition
+        self.cost = cost
+        self.gender = gender
+        
+    def op(self):
+        print('\nYOUR ORDER : ',self.name, ' Amount : ',self.amount, 'Condition : ', self.condition)     
+        print('\nCOST : $',self.amount * self.cost)
+           
+class body():
+    def __init__(self, gender):
+                          self.gender= gender
+    def gd(self):
+                          print('GENDER : ', self.gender)
+                          
+                          
+def welcome():
+    
+    print('\n-----------------------------------')
+    print('\n         SELL YOUR ORGANS!')
+    print('\n-----------------------------------')
+    print('\n1) sell your brain')
+    print('2) sell your heart')
+    print('3) sell your lungs')
+    print('4) sell your kidneys')
+    print('5) sell whole body')
+    print('----------------------------------')
+    
+    option = input('\nEnter here : ')
+
+    
+    if option == '1':
+        print('\nEnter required fields')
+        
+        ab = input('\nEnter amount here : ')
+        cb = input('Enter condition here : ')
+        
+        brain = organs('Brain', ab, cb, 1, '')
+        
+        if ab != '1':
+            print('\nYOU HAVE MORE THAN 1 BRAIN!!,\n ##CALLING 911##')
+            time.sleep(2)
+            welcome()
+        else:
+                brain.op()
+                time.sleep(2)
+                welcome()
+                
+    elif option == '2':
+        print('\nEnter Required Fields')          
+        
+        ah = int(input('\nEnter amount here : '))    
+        ch = input('Enter condition here : ')         
+        
+        heart = organs('Heart', ah, ch, 500000,'')  
+        if ah != 1:
+            print('\nYOU HAVE MORE THAN 1 HEART!!,\n ##CALLING 911##')
+            time.sleep(2)
+            welcome()
+        else:
+                heart.op()
+                time.sleep(2)
+                welcome()      
+        
+        
+
+    elif option == '4':
+        print('\nEnter Required Fields')
+        
+        ak = int(input('\nEnter amount here : '))
+        ck = input('Enter condition here : ')
+        
+        kidney = organs('Kidneys', ak, ck, 10000000, '')
+        if ak != 2:
+            print('\n!!You have more than 2 kidneys!!\n##CALLING 911##')
+            time.sleep(2)
+            welcome()
+        else:
+            kidney.op()           
+            time.sleep(2)
+            welcome()
+    elif option == '3':
+        print('\nEnter Required Fields')
+        
+        al = int(input('\nEnter amount here : '))
+        cl = input('Enter condition here : ')
+        
+        lungs = organs('Lungs', al, cl, 100000, '')
+        if al >= 3:
+            print('\n!!You have more than 2 lungs!!\n##CALLING 911##')
+            time.sleep(2)
+            welcome()
+        else:
+            lungs.op()           
+            time.sleep(2)
+            welcome()           
+    elif option == '5':
+        print('\nEnter Required Fields')
+        
+        ab = int(input('\nEnter amount here : '))
+        cb = input('Enter condition here : ')
+        gn = input('Enter gender here : ')
+        
+        body = organs('BODY', ab, cb, 0, gn)
+        
+        if ab != 1:
+            print('\n!!You have more than 1 body!!\n##CALLING 911##')
+            time.sleep(2)
+            welcome()
+        else:
+            body.op()           
+            
+            print('\nHEHE! No demand for your body!!')
+            time.sleep(2)
+            welcome()             
+    else:
+        print('INVALID INPUT!')            
+        time.sleep(2)
+        welcome()
+
+
+
+welcome()
+    
