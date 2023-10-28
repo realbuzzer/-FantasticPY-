@@ -1,0 +1,57 @@
+import random
+
+class Person():
+    gender = ''
+    colour = ''
+    body = ''
+    
+    def buy(self):
+        
+        print('\n\n~SELECT YOUR CHOICE~')
+        self.gender = input('Enter gender here : ')
+        self.colour = input('Enter colour here : ')
+        self.body = input('Enter body parts here : ')
+        print('\ngender : ',self.gender, 'colour : ', self.colour, 'Body Parts : ',self.body,)
+        print('\nCOST : $',random.randint(1000, 10000000))
+        
+class HumanMeat():
+        type = ''
+        gender = ''
+        parts = ''
+        
+        def buy(self):
+            
+            print('\n~##SELECT YPUR CHOICE##~')
+            self.type = input('Enter type here : ')
+            self.gender= input('Enter gender here : ')
+            self.parts = input('Enter parts to be removed : ')
+            
+            print('\nYour Order : type :', self.type,'gender : ', self.gender, 'parts : ', self.parts)
+        
+        
+def order():
+    person = Person()
+    person.buy()
+def orderm():
+    meat = HumanMeat()
+    meat.buy()
+    
+def start():
+    print('\n\n                            ##BUY HUMANS##')
+    
+    print('\n\n1: buy humans for daily use')
+    print('2: buy human meat')
+    
+    option = input('\nEnter you option here : ')
+    
+    if option == 1 or option == '1':
+        order()
+    elif option == 2 or '2':
+        orderm()
+    else:
+        print('\n\ninvalid input')
+        start()
+start()
+    
+    
+    
